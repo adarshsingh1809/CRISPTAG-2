@@ -1,7 +1,9 @@
 <template>
   <div id="app">
     <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <HelloWorld msg="convert string to upper case"/>
+    <input type="text" v-model="message" />
+  <h4>{{ message | uppercase }}</h4>
   </div>
 </template>
 
@@ -14,6 +16,16 @@ export default {
     HelloWorld
   }
 }
+vue.filter('uppercase', function (value) {
+	return value.toUpperCase()
+})
+
+new Vue({
+	el: '#app',
+  data: {message: 'coligo.io'
+  }
+})
+
 </script>
 
 <style>
